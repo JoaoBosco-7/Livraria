@@ -14,7 +14,7 @@ O sistema oferece uma série de funcionalidades essenciais para a administraçã
 **Motivação e Perfil dos Usuários:** A motivação para o desenvolvimento deste sistema surgiu da necessidade de facilitar a gestão de bibliotecas e livrarias, especialmente em ambientes educacionais. E principalmente, a tentativa de entender como esse sistema funcionaria na prática. 
 
 ## Diagrama de Classes 
-![image](https://github.com/JoaoBosco-7/Livraria/assets/71224952/86a110b5-beab-41d8-b0e6-455b45110c27)
+![image](https://github.com/JoaoBosco-7/Livraria/assets/71224952/388a3a05-f524-475d-bc4b-689e8c868ad3)
 
 O **Diagrama de Classes** descreve um sistema onde um gerente administra uma biblioteca, que contém livros disponíveis para aluguel. Os clientes podem realizar transações de aluguel com a biblioteca, associando-se a um ou mais livros disponíveis. A existência de uma conta (Acount) fornece informações básicas tanto para clientes quanto para gerentes. A classe ExternalApiSimulator está associada ao Manager e tem uma relação de dependência com o LisinerCallBack, indicando uma relação de uso entre essas classes para simulação de interações externas e recebimento de chamadas de retorno.
 
