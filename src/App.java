@@ -41,7 +41,6 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.flush();
-            cmdInterface.hearder();
             System.out.println(
                     "Digite 'cliente' para fazer login como cliente, 'gerente' para fazer login como gerente, ou 'sair' para sair:");
             String role = scanner.nextLine();
