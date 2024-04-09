@@ -70,6 +70,7 @@ public class App {
                                     "'3'. Alugar um livro\n" +
                                     "'4'. Verificar livros alugados\n" +
                                     "'5'. Devolver um livro\n" +
+                                    "'6'. Ler um livro\n" +
                                     "Digite 'sair' para sair:");
                             String action = scanner.nextLine();
 
@@ -232,6 +233,31 @@ public class App {
                                         }
                                     }
                                     break;
+                                
+                                case "6":
+                                    ArrayList<Book> rentedBooksS = authenticatedCliente.getBookList();
+                                    if (rentedBooksS.isEmpty()) {
+                                        System.out.println("Você não alugou nenhum livro ainda.");
+                                    } else {
+                                        System.out.println("Livros alugados:");
+                                        for (int i = 0; i < rentedBooksS.size(); i++) {
+                                            System.out.println((i + 1) + ". " + rentedBooksS.get(i).getTitle());
+                                        }
+                                
+                                        // Solicitar ao usuário que escolha o livro a ser lido
+                                        System.out.println("Digite o número do livro que você deseja ler:");
+                                        int choice = scanner.nextInt();
+                                        scanner.nextLine(); // Limpar o buffer do scanner
+                                
+                                        // Verificar se a escolha é válida
+                                        if (choice >= 1 && choice <= rentedBooksS.size()) {
+                                            String bookTitle = rentedBooksS.get(choice - 1).getTitle();
+                                            authenticatedCliente.readPdf(bookTitle);
+                                        } else {
+                                            System.out.println("Escolha inválida. Por favor, escolha um número de livro válido.");
+                                        }
+                                    }
+                                    break;    
 
                                 case "sair":
                                     System.out.println("Saindo...");
