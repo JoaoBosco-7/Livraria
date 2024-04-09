@@ -1,6 +1,10 @@
 package models;
 
+import java.net.URI;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.awt.Desktop;
+import java.nio.file.Path;
 
 public class Cliente extends Acount {
 
@@ -47,6 +51,40 @@ public class Cliente extends Acount {
             }
         }
         return null;
+    }
+
+    // Função para ler um arquivo PDF
+     public void readPdf(String bookUrl) {
+        bookUrl = bookUrl.replace(" ", "%20");
+        bookUrl = "src/books/" + bookUrl + ".pdf";
+
+   
+
+        try {
+            // Obter o caminho absoluto para o arquivo
+            Path filePath = Paths.get(bookUrl).toAbsolutePath();
+            
+            // Converter o caminho para o formato de URL
+            String url = "file:///" + filePath.toString().replace("\\", "/");
+
+            // Criar um objeto URI com a URL especificada
+            URI uri = new URI(url);
+
+            // Verificar se o suporte ao Desktop é suportado
+            if (Desktop.isDesktopSupported()) {
+                // Obter a instância do Desktop
+                Desktop desktop = Desktop.getDesktop();
+
+                // Abrir o navegador padrão com a URL especificada
+                desktop.browse(uri);
+            } else {
+                System.out.println("Desktop não é suportado.");
+                // Você pode tomar alguma ação alternativa aqui, como exibir a URL na saída padrão
+                System.out.println("URL: " + url);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
