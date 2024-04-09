@@ -13,6 +13,9 @@ O sistema oferece uma série de funcionalidades essenciais para a administraçã
 
 **Motivação e Perfil dos Usuários:** A motivação para o desenvolvimento deste sistema surgiu da necessidade de facilitar a gestão de bibliotecas e livrarias, especialmente em ambientes educacionais. E principalmente, a tentativa de entender como esse sistema funcionaria na prática. 
 
+## Diagrama de Caso de Uso
+![image](https://github.com/JoaoBosco-7/Livraria/assets/71224952/8e335a4d-dcc6-4b08-92f6-46d56f3af14b)
+
 ## Diagrama de Classes 
 ![image](https://github.com/JoaoBosco-7/Livraria/assets/71224952/388a3a05-f524-475d-bc4b-689e8c868ad3)
 
